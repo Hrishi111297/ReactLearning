@@ -27460,53 +27460,77 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _utils = require("../utils");
-var _utilsDefault = parcelHelpers.interopDefault(_utils);
 var _restCard = require("./RestCard");
 var _restCardDefault = parcelHelpers.interopDefault(_restCard);
+var _react = require("react");
+var _utils = require("../utils");
+var _utilsDefault = parcelHelpers.interopDefault(_utils);
+var _s = $RefreshSig$();
 const Body = ()=>{
+    _s();
+    const [list, setList] = (0, _react.useState)((0, _utilsDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search",
+                className: "filter",
                 style: {
                     margin: "10px"
                 },
-                children: " Search"
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "f-btn-con",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "filter-btn",
+                        onClick: ()=>{
+                            filterList = list.filter((res)=>res.id < 3);
+                            //console.log(data);
+                            setList(filterList);
+                        },
+                        children: "click me"
+                    }, void 0, false, {
+                        fileName: "src/Component/Body.js",
+                        lineNumber: 11,
+                        columnNumber: 1
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Component/Body.js",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/Component/Body.js",
-                lineNumber: 6,
+                lineNumber: 9,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res",
-                children: (0, _utilsDefault.default).map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: list.map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "res-con",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restCardDefault.default), {
                             data: item
                         }, void 0, false, {
                             fileName: "src/Component/Body.js",
-                            lineNumber: 9,
+                            lineNumber: 22,
                             columnNumber: 49
                         }, undefined)
                     }, item.id, false, {
                         fileName: "src/Component/Body.js",
-                        lineNumber: 9,
+                        lineNumber: 22,
                         columnNumber: 9
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/Component/Body.js",
-                lineNumber: 7,
+                lineNumber: 20,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Component/Body.js",
-        lineNumber: 5,
+        lineNumber: 8,
         columnNumber: 7
     }, undefined);
 };
+_s(Body, "YsYYNteq8K6zNHizmF9ya1u38nc=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -27517,72 +27541,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../utils":"en4he","./RestCard":"5wLrf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"en4he":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Imagee_Url1", ()=>Imagee_Url1);
-const data = [
-    {
-        "id": 1,
-        "name": "John Doe",
-        "age": 30,
-        "email": "john.doe@example.com",
-        "city": "New York"
-    },
-    {
-        "id": 2,
-        "name": "Jane Smith",
-        "age": 25,
-        "email": "jane.smith@example.com",
-        "city": "Los Angeles"
-    },
-    {
-        "id": 3,
-        "name": "Michael Johnson",
-        "age": 35,
-        "email": "michael.johnson@example.com",
-        "city": "Chicago"
-    },
-    {
-        "id": 4,
-        "name": "Emily Williams",
-        "age": 28,
-        "email": "emily.williams@example.com",
-        "city": "Houston"
-    },
-    {
-        "id": 5,
-        "name": "William Brown",
-        "age": 40,
-        "email": "william.brown@example.com",
-        "city": "Phoenix"
-    },
-    {
-        "id": 6,
-        "name": "Olivia Jones",
-        "age": 22,
-        "email": "olivia.jones@example.com",
-        "city": "Philadelphia"
-    },
-    {
-        "id": 7,
-        "name": "James Garcia",
-        "age": 33,
-        "email": "james.garcia@example.com",
-        "city": "San Antonio"
-    },
-    {
-        "id": 8,
-        "name": "Sophia Martinez",
-        "age": 29,
-        "email": "james.garcia@example.com",
-        "city": "San Antonio"
-    }
-];
-exports.default = data;
-const Imagee_Url1 = "https://source.unsplash.com/random/?Cryptocurrency&1";
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5wLrf":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./RestCard":"5wLrf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../utils":"en4he"}],"5wLrf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2315 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27654,6 +27613,71 @@ $RefreshReg$(_c, "Restcard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../constant":"jVIFP","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["4Czo8","1xC6H","dbiGH"], "dbiGH", "parcelRequire12cd")
+},{"react/jsx-dev-runtime":"iTorj","../constant":"jVIFP","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"en4he":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Imagee_Url1", ()=>Imagee_Url1);
+let data = [
+    {
+        "id": 1,
+        "name": "John Doe",
+        "age": 30,
+        "email": "john.doe@example.com",
+        "city": "New York"
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "age": 25,
+        "email": "jane.smith@example.com",
+        "city": "Los Angeles"
+    },
+    {
+        "id": 3,
+        "name": "Michael Johnson",
+        "age": 35,
+        "email": "michael.johnson@example.com",
+        "city": "Chicago"
+    },
+    {
+        "id": 4,
+        "name": "Emily Williams",
+        "age": 28,
+        "email": "emily.williams@example.com",
+        "city": "Houston"
+    },
+    {
+        "id": 5,
+        "name": "William Brown",
+        "age": 40,
+        "email": "william.brown@example.com",
+        "city": "Phoenix"
+    },
+    {
+        "id": 6,
+        "name": "Olivia Jones",
+        "age": 22,
+        "email": "olivia.jones@example.com",
+        "city": "Philadelphia"
+    },
+    {
+        "id": 7,
+        "name": "James Garcia",
+        "age": 33,
+        "email": "james.garcia@example.com",
+        "city": "San Antonio"
+    },
+    {
+        "id": 8,
+        "name": "Sophia Martinez",
+        "age": 29,
+        "email": "james.garcia@example.com",
+        "city": "San Antonio"
+    }
+];
+exports.default = data;
+const Imagee_Url1 = "https://source.unsplash.com/random/?Cryptocurrency&1";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["4Czo8","1xC6H","dbiGH"], "dbiGH", "parcelRequire12cd")
 
 //# sourceMappingURL=index.fe9d54b7.js.map
