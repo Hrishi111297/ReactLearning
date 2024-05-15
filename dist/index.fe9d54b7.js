@@ -27279,7 +27279,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Logo_Url", ()=>Logo_Url);
 parcelHelpers.export(exports, "Imagee_Url", ()=>Imagee_Url);
-const Logo_Url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRENF9uv9UWIWWbExsgj7XyX58xMFAOZTzUSQ&s";
+const Logo_Url = "https://media.istockphoto.com/id/1412938561/photo/back-to-school-on-pink-background-colorful-plastic-letters-for-kids-3d-illustration.jpg?s=1024x1024&w=is&k=20&c=Llm-XBrFoAN1FBnb817EYa5hf6omajF_v-1ja_hTecA=";
 const Imagee_Url = "https://source.unsplash.com/random/?Technology&1";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
@@ -27465,11 +27465,26 @@ var _restCardDefault = parcelHelpers.interopDefault(_restCard);
 var _react = require("react");
 var _utils = require("../utils");
 var _utilsDefault = parcelHelpers.interopDefault(_utils);
+var _shimmer = require("./Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
-    const [list, setList] = (0, _react.useState)((0, _utilsDefault.default));
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    const [list, setList] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fettchData();
+    }, []);
+    fettchData = async ()=>{
+        let data = await fetch("https://rickandmortyapi.com/api/character");
+        const appList = await data.json();
+        console.log(appList.results[0]);
+        setList(appList.results);
+    };
+    return list.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        fileName: "src/Component/Body.js",
+        lineNumber: 21,
+        columnNumber: 26
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27483,23 +27498,22 @@ const Body = ()=>{
                         className: "filter-btn",
                         onClick: ()=>{
                             filterList = list.filter((res)=>res.id < 3);
-                            //console.log(data);
-                            setList(filterList);
+                        //console.log(list);
                         },
                         children: "click me"
                     }, void 0, false, {
                         fileName: "src/Component/Body.js",
-                        lineNumber: 11,
+                        lineNumber: 26,
                         columnNumber: 1
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/Component/Body.js",
-                    lineNumber: 10,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Component/Body.js",
-                lineNumber: 9,
+                lineNumber: 24,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27510,27 +27524,27 @@ const Body = ()=>{
                             data: item
                         }, void 0, false, {
                             fileName: "src/Component/Body.js",
-                            lineNumber: 22,
+                            lineNumber: 37,
                             columnNumber: 49
                         }, undefined)
                     }, item.id, false, {
                         fileName: "src/Component/Body.js",
-                        lineNumber: 22,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/Component/Body.js",
-                lineNumber: 20,
+                lineNumber: 35,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Component/Body.js",
-        lineNumber: 8,
+        lineNumber: 23,
         columnNumber: 7
     }, undefined);
 };
-_s(Body, "YsYYNteq8K6zNHizmF9ya1u38nc=");
+_s(Body, "mo3wxvns+52yWT3GI5PbrxgLw68=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -27541,7 +27555,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./RestCard":"5wLrf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../utils":"en4he"}],"5wLrf":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./RestCard":"5wLrf","react":"21dqq","../utils":"en4he","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Shimmer":"ad08h"}],"5wLrf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2315 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27554,14 +27568,14 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constant = require("../constant");
 const Restcard = (props)=>{
     const { data } = props;
-    const { id, name, age, email, city } = data;
+    const { id, name, age, gender, image, type, location } = data;
     console.log(data);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "res-card",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 className: "clogo",
-                src: (0, _constant.Imagee_Url),
+                src: image,
                 alt: "Restaurant Logo"
             }, void 0, false, {
                 fileName: "src/Component/RestCard.js",
@@ -27590,7 +27604,7 @@ const Restcard = (props)=>{
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: email
+                children: gender
             }, void 0, false, {
                 fileName: "src/Component/RestCard.js",
                 lineNumber: 13,
@@ -27678,6 +27692,33 @@ let data = [
 exports.default = data;
 const Imagee_Url1 = "https://source.unsplash.com/random/?Cryptocurrency&1";
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["4Czo8","1xC6H","dbiGH"], "dbiGH", "parcelRequire12cd")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ad08h":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ffd3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ffd3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+Shimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "res-card",
+        children: "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
+    }, void 0, false, {
+        fileName: "src/Component/Shimmer.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+exports.default = Shimmer;
+
+  $parcel$ReactRefreshHelpers$ffd3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["4Czo8","1xC6H","dbiGH"], "dbiGH", "parcelRequire12cd")
 
 //# sourceMappingURL=index.fe9d54b7.js.map
